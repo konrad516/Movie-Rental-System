@@ -9,8 +9,8 @@
 using namespace std;
 
 //file paths
-constexpr auto moviesFilePath = "movies.csv";
-constexpr auto accountsFilePath = "accounts.csv";
+constexpr auto moviesFilePath = "files/movies.csv";
+constexpr auto accountsFilePath = "files/accounts.csv";
 
 class ReadFiles
 {
