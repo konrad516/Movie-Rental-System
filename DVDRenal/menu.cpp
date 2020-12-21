@@ -235,6 +235,8 @@ void modifyUserMenu()
 
 	print_title(title);
 
+	store.showAccounts();
+
 	cout << "\t\tPlease enter account ID: ";
 	getline(cin, acc_id);
 
