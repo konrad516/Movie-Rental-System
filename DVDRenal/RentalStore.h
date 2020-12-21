@@ -33,4 +33,7 @@ public:
 
     void reciveMovie(int movie_id);
     void rentMovie(string user, int movie_id, string date);
+
+    void deleteMovie(int movie_id);
+    void deleteAccount(int acc_id);
 };

@@ -27,13 +27,15 @@ string Admin::printPanel()
         << "\t\t6. Create user" << endl
         << "\t\t7. Return movie" << endl
         << "\t\t8. Rent movie" << endl
-        << "\t\t9. Back" << endl;
+        << "\t\t9. Delete movie" << endl
+        << "\t\t10. Delete account" << endl
+        << "\t\t11. Back" << endl;
 
     cout << "\n\n\tPlease enter your choice: ";
     getline(cin, choice);
 
-    if (choice.length() > 1)
-        choice = "x";
+    if (choice.length() > 2)
+        choice = "0";
 
     return choice;
 }

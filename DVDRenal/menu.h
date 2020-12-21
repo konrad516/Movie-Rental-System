@@ -14,3 +14,5 @@ void createMovieMenu();
 void modifyUserMenu();
 void reciveMenu();
 void rentMenu();
+void deleteMovieMenu();
+void deleteAccountMenu();

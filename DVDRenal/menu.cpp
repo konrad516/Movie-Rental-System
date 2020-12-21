@@ -140,52 +140,62 @@ void userMenu(Account* acc)
 void adminMenu(Account* acc)
 {
 	string choice = acc->printPanel();
-	switch (choice[0])
+	switch (stoi(choice))
 	{
-	case '1':
+	case 1:
 		store.showMovies();
 		system("pause");
 		adminMenu(acc);
 		break;
 
-	case '2':
+	case 2:
 		createMovieMenu();
 		system("pause");
 		adminMenu(acc);
 		break;
-	case '3':
+	case 3:
 		store.showAccounts();
 		system("pause");
 		adminMenu(acc);
 		break;
-	case '4':
+	case 4:
 		modifyUserMenu();
 		cout << "\n\t\tNew account has been successfully registered\n\n";
 		system("pause");
 		adminMenu(acc);
 		break;
-	case '5':
+	case 5:
 		account_create(true);
 		cout << "\n\t\tNew account has been successfully registered\n\n";
 		system("pause");
 		adminMenu(acc);
 		break;
-	case '6':
+	case 6:
 		account_create(false);
 		system("pause");
 		adminMenu(acc);
 		break;
-	case '7':
+	case 7:
 		reciveMenu();
 		system("pause");
 		adminMenu(acc);
 		break;
-	case '8':
+	case 8:
 		rentMenu();
 		system("pause");
 		adminMenu(acc);
 		break;
-	case '9':
+	case 9:
+		deleteMovieMenu();
+		system("pause");
+		adminMenu(acc);
+		break;
+	case 10:
+		deleteAccountMenu();
+		system("pause");
+		adminMenu(acc);
+		break;
+	case 11:
 		break;
 	default:
 		cout << "Please enter correct input" << endl;
@@ -282,5 +292,41 @@ void rentMenu()
 	getline(cin, date);
 
 	store.rentMovie(user, stoi(movieID), date);
+	cout << endl;
+}
+
+void deleteMovieMenu()
+{
+	system("cls");
+
+	string title = "DVD RENTAL - Delete Movie";
+	string movieID;
+
+	print_title(title);
+
+	store.showMovies();
+
+	cout << "\n\t\tPlease enter movie ID that you want to delete: ";
+	getline(cin, movieID);
+
+	store.deleteMovie(stoi(movieID));
+	cout << endl;
+}
+
+void deleteAccountMenu()
+{
+	system("cls");
+
+	string title = "DVD RENTAL - Delete Account";
+	string accountID;
+
+	print_title(title);
+
+	store.showAccounts();
+
+	cout << "\n\t\tPlease enter account ID that you want to delete: ";
+	getline(cin, accountID);
+
+	store.deleteAccount(stoi(accountID));
 	cout << endl;
 }

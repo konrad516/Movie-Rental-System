@@ -195,7 +195,7 @@ void RentalStore::reciveMovie(int movie_id)
 //
 void RentalStore::rentMovie(string user, int movie_id, string date)
 {
-    if (movie_id > movies.size())
+    if (movie_id > movies.size() || movie_id < 1)
         cout << "\n\t\tMovie doesn't exist\n";
 
     else if (movies[movie_id - 1]->getRentedLogin() != "0")
@@ -209,3 +209,30 @@ void RentalStore::rentMovie(string user, int movie_id, string date)
         movies[movie_id - 1]->printMovie();
     }
 }
+
+void RentalStore::deleteMovie(int movie_id)
+{
+    if (movie_id > movies.size() || movie_id < 1)
+        cout << "\n\t\tMovie doesn't exist\n";
+
+    else
+    {
+        delete movies[movie_id - 1];
+        movies.erase(movies.begin() + movie_id - 1, movies.begin() + movie_id);
+        cout << "\n\t\tMovie has been deleted successfully\n";
+    }
+}
+
+void RentalStore::deleteAccount(int acc_id)
+{
+    if (acc_id > accounts.size() || acc_id < 1)
+        cout << "\n\t\tAccount do not exist\n";
+
+    else
+    {
+        delete accounts[acc_id - 1];
+        accounts.erase(accounts.begin() + acc_id - 1, accounts.begin() + acc_id);
+        cout << "\n\t\tAccount has been deleted successfully\n";
+    }
+}
+
