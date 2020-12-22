@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "MovieRating.h"
 
 using namespace std;
 
@@ -12,6 +13,7 @@ private:
     string m_category;
     string m_rentedLogin;
     string m_returnDate;
+    MovieRating m_rating;
 
 public:
     Movie() {};
@@ -21,7 +23,7 @@ public:
     ///////////////////////////////////////////////////////////
     Movie(int movieID, string title, string director, string category, string rentedLogin = "0", string returnDate = "0")
         : m_movieID(movieID), m_title(title), m_director(director), m_category(category), m_rentedLogin(rentedLogin), m_returnDate(returnDate) {};
-
+    
     int getMovieID() { return m_movieID; }
     string getTitle() { return m_title; }
     string getDirector() { return m_director; }
@@ -39,6 +41,7 @@ public:
     friend istream& operator>>(istream& in, Movie& rhs);
 
     void printMovie();
+    void printMovieRating();
 };
 
 ostream& operator<<(ostream& out, const Movie& rhs);

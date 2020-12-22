@@ -20,8 +20,14 @@ public:
 	int getRatingCounter() { return m_counter; }
 
 	float getRating();
+	void printRating();
 
 	void addComment(string text);
 	void addRating(int rating);
+
+	friend ostream& operator<<(ostream& out, const MovieRating& rhs);
+	friend istream& operator>>(istream& in, MovieRating& rhs);
 };
 
+ostream& operator<<(ostream& out, const MovieRating& rhs);
+istream& operator>>(istream& in, MovieRating& rhs);
