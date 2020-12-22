@@ -13,18 +13,23 @@ float MovieRating::getRating()
 void MovieRating::printRating()
 {
     if (m_counter)
-        cout << "Users Rating: " << setprecision(2) << getRating() << endl;
+        cout << "\t\tUsers Rating: " << setprecision(2) << getRating() << endl;
     else
-        cout << "The movie has no ratings\n";
+        cout << "\t\tThe movie has no ratings\n";
 
     if(m_comments.empty())
-        cout <<"\nThe movie has no comments\n";
+        cout <<"\n\t\tThe movie has no comments\n";
     else
     {
-        cout << endl;
+        int counter = 1;
+        cout << endl << "\t\tComments:\n\n";
         for (auto com : m_comments)
-            cout << setw(100) << com << endl;
+        {
+            cout << left << "\t\t" << left << counter << ". " << left << setw(90) << com << endl << endl;
+            counter++;
+        }
     }
+    cout << internal;
 }
 
 void MovieRating::addComment(string text)

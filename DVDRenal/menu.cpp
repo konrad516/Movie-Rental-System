@@ -212,6 +212,7 @@ void ratingMenu()
 	cout << endl;
 
 	string choice;
+	string choice2;
 
 	cout << "\t\tPlease enter movie ID to see details or enter 0 to back: ";
 	getline(cin, choice);
@@ -225,6 +226,32 @@ void ratingMenu()
 		return;
 
 	store.showMovieDetails(stoi(choice));
+
+	cout << "\n\n\n\t\t1. Rate the movie" << endl << "\t\t2. Write new comment" << endl << "\t\t3. Exit\n\n";
+
+	cout << "\tPlease enter your choice: ";
+	getline(cin, choice2);
+
+	if (choice2.length() > 1)
+		choice2 = "x";
+
+	switch (choice2[0])
+	{
+	case '1':
+		store.movieNewRate();
+		system("pause");
+		ratingMenu();
+		break;
+
+	case '2':
+		store.movieNewComment();
+		system("pause");
+		ratingMenu();
+		break;
+	case '3':
+		
+		break;
+	}
 }
 
 void createMovieMenu()

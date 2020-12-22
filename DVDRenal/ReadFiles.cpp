@@ -78,7 +78,7 @@ vector<Movie*> ReadFiles::readMovies()
         while (!moviesFile.eof())
         {
             Movie* mov = new Movie;
-
+            comments.clear();
             getline(moviesFile, movieID, ',');
             getline(moviesFile, title, ',');
             getline(moviesFile, director, ',');
@@ -92,7 +92,6 @@ vector<Movie*> ReadFiles::readMovies()
             while (getline(s, temp, ';'))
                 comments.push_back(temp);
 
-            comments.push_back(temp);
             if (!movieID.empty())
             {
                 MovieRating rating(comments, stoi(ratingSum), stoi(ratingCounter));
