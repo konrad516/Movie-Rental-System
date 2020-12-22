@@ -11,6 +11,10 @@ private:
 	int m_ratingSum{};
 	int m_counter{};
 public:
+//	MovieRating() {};
+	MovieRating(vector<string> comments = {}, int ratingSum = 0, int Counter = 0) :
+		m_comments(comments), m_ratingSum(ratingSum), m_counter(Counter) {};
+
 	void setComments(vector<string>comments) { m_comments = comments; }
 	void setRatingSum(int ratingSum) { m_ratingSum = ratingSum; }
 	void setRatingCounter(int counter) { m_counter = counter; }

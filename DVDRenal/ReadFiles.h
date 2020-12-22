@@ -21,6 +21,7 @@ private:
 public:
     vector<Account*> readAccounts();
     vector<Movie*> readMovies();
+
     void saveAccounts(vector<Account*> accounts);
     void saveMovies(vector<Movie*> movies);
 };

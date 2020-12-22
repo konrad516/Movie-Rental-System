@@ -97,6 +97,14 @@ void RentalStore::showMovies(Account* acc)
             mov->printMovie();
     }
     cout << endl;
+
+}
+
+void RentalStore::showMovieDetails(int movieId)
+{
+    cout << endl;
+    movies[movieId - 1]->printMovieRating();
+    cout << endl;
 }
 
 ///////////////////////////////////////////////////////////

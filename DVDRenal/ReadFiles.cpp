@@ -68,8 +68,8 @@ vector<Movie*> ReadFiles::readMovies()
 {
     ifstream moviesFile(moviesFilePath);
 
-    string title, director, category, returnDate;
-    string movieID, rentedLogin;
+    string title, director, category, returnDate, movieID, rentedLogin, temp, ratingSum, ratingCounter;
+    vector<string> comments;
 
     if (moviesFile.is_open())
     {
@@ -77,15 +77,26 @@ vector<Movie*> ReadFiles::readMovies()
         while (!moviesFile.eof())
         {
             Movie* mov = new Movie;
+
             getline(moviesFile, movieID, ',');
             getline(moviesFile, title, ',');
             getline(moviesFile, director, ',');
             getline(moviesFile, category, ',');
             getline(moviesFile, rentedLogin, ',');
-            getline(moviesFile, returnDate, '\n');
+            getline(moviesFile, returnDate, ';');
+            getline(moviesFile, ratingSum, ';');
+            getline(moviesFile, ratingCounter, ';');
+            while (getline(moviesFile, temp, ';'))
+            {
+                comments.push_back(temp);
+            }
+            getline(moviesFile, temp, '\n');
+            comments.push_back(temp);
             if (!movieID.empty())
             {
+                MovieRating rating(comments, stoi(ratingSum), stoi(ratingCounter));
                 Movie* mov = new Movie(stoi(movieID), title, director, category, rentedLogin, returnDate);
+                mov->setRating(rating);
                 m_movies.push_back(mov);
             }
         }

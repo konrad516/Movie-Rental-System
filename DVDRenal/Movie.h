@@ -36,6 +36,7 @@ public:
     void setCategory(string category) { m_category = category; }
     void setRentedID(string rentedLogin) { m_rentedLogin = rentedLogin; }
     void setReturnDate(string returnDate) { m_returnDate = returnDate; }
+    void setRating(MovieRating rating) { m_rating = rating; }
 
     friend ostream& operator<<(ostream& out, const Movie& rhs);
     friend istream& operator>>(istream& in, Movie& rhs);

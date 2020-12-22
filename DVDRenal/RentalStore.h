@@ -27,6 +27,7 @@ public:
     void createMovie(string title, string director, string category);
 
     void showMovies(Account* acc = nullptr);
+    void showMovieDetails(int movieId);
     Account* showAccounts(int acc_id = 0);
 
     void modifyAccount(Account* acc, string login, string password, string fname, string lname);
