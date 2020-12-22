@@ -115,7 +115,6 @@ void userMenu(Account* acc)
 	case '1':
 		store.showMovies();
 		ratingMenu();
-		system("pause");
 		userMenu(acc);
 		break;
 
@@ -146,7 +145,6 @@ void adminMenu(Account* acc)
 	case 1:
 		store.showMovies();
 		ratingMenu();
-		system("pause");
 		adminMenu(acc);
 		break;
 
@@ -219,7 +217,7 @@ void ratingMenu()
 
 	while (choice.length() > 1)
 	{
-		cout << "Please enter correct input\n";
+		cout << "\t\tPlease enter correct input\n";
 		getline(cin, choice);
 	}
 	if (choice == "0")
@@ -227,7 +225,7 @@ void ratingMenu()
 
 	store.showMovieDetails(stoi(choice));
 
-	cout << "\n\n\n\t\t1. Rate the movie" << endl << "\t\t2. Write new comment" << endl << "\t\t3. Exit\n\n";
+	cout << "\n\n\t\t1. Rate the movie" << endl << "\t\t2. Write new comment" << endl << "\t\t3. Exit\n\n";
 
 	cout << "\tPlease enter your choice: ";
 	getline(cin, choice2);
@@ -238,20 +236,45 @@ void ratingMenu()
 	switch (choice2[0])
 	{
 	case '1':
-		store.movieNewRate();
+		newRateMenu(stoi(choice));
 		system("pause");
-		ratingMenu();
 		break;
 
 	case '2':
-		store.movieNewComment();
+		newCommentMenu(stoi(choice));
 		system("pause");
-		ratingMenu();
 		break;
 	case '3':
-		
+	default:
+		cout << "Please enter correct input" << endl;
+		system("pause");
 		break;
 	}
+}
+
+void newRateMenu(int movieID)
+{
+	string temp;
+	cout << "\n\t\tPlease enter new rate 0-10: ";
+	getline(cin, temp);
+	int rate = stoi(temp);
+
+	while (rate < 0|| rate>10)
+	{
+		cout << "\n\t\tPlease enter correct input: ";
+		getline(cin, temp);
+		int rate = stoi(temp);
+	}
+
+	store.movieNewRate(movieID, rate);
+}
+
+void newCommentMenu(int movieID)
+{
+	string comment;
+	cout << "\n\t\tPlease enter new comment: ";
+	getline(cin, comment);
+	store.movieNewComment(movieID, comment);
 }
 
 void createMovieMenu()

@@ -226,12 +226,18 @@ void RentalStore::rentMovie(string user, int movie_id, string date)
     }
 }
 
-void RentalStore::movieNewRate()
+void RentalStore::movieNewRate(int movieID, int rate)
 {
+   MovieRating temp = movies[movieID - 1]->getRating();
+   temp.addRating(rate);
+   movies[movieID - 1]->setRating(temp);
 }
 
-void RentalStore::movieNewComment()
+void RentalStore::movieNewComment(int movieID, string comment)
 {
+    MovieRating temp = movies[movieID - 1]->getRating();
+    temp.addComment(comment);
+    movies[movieID - 1]->setRating(temp);
 }
 
 void RentalStore::deleteMovie(int movie_id)

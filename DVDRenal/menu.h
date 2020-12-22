@@ -11,6 +11,8 @@ void account_create(bool isadmin=0);
 void userMenu(Account* acc);
 void adminMenu(Account* acc);
 void ratingMenu();
+void newRateMenu(int movieID);
+void newCommentMenu(int movieID);
 void createMovieMenu();
 void modifyUserMenu();
 void reciveMenu();

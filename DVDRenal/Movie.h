@@ -30,6 +30,7 @@ public:
     string getCategory() { return m_category; }
     string getRentedLogin() { return m_rentedLogin; }
     string getReturnDate() { return m_returnDate; }
+    MovieRating getRating() { return m_rating; }
 
     void setTitle(string title) { m_title = title; }
     void setDirector(string director) { m_director = director; }

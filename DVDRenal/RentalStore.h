@@ -35,8 +35,8 @@ public:
     void reciveMovie(int movie_id);
     void rentMovie(string user, int movie_id, string date);
 
-    void movieNewRate();
-    void movieNewComment();
+    void movieNewRate(int movieID, int rate);
+    void movieNewComment(int movieID, string comment);
 
     void deleteMovie(int movie_id);
     void deleteAccount(int acc_id);
