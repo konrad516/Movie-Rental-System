@@ -51,6 +51,6 @@ ostream& operator<<(ostream& out, const Movie& rhs)
 ///////////////////////////////////////////////////////////
 istream& operator>>(istream& in, Movie& rhs)
 {
-    in >> rhs.m_movieID >> rhs.m_title >> rhs.m_director >> rhs.m_category >> rhs.m_rentedLogin >> rhs.m_returnDate;
+    in >> rhs.m_movieID >> rhs.m_title >> rhs.m_director >> rhs.m_category >> rhs.m_rentedLogin >> rhs.m_returnDate >> rhs.m_rating;
     return in;
 }

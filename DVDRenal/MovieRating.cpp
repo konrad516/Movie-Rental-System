@@ -48,11 +48,11 @@ ostream& operator<<(ostream& out, const MovieRating& rhs)
     out << ";" << rhs.m_ratingSum << ";" << rhs.m_counter;
     for (auto com : rhs.m_comments)
         out << ";" << com;
+    out << ";";
     return out;
 }
 
 istream& operator>>(istream& in, MovieRating& rhs)
 {
-    // TODO: tu wstawiæ instrukcjê return
     return in;
 }
