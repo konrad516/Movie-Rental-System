@@ -220,7 +220,7 @@ void ratingMenu()
 		cout << "\t\tPlease enter correct input\n";
 		getline(cin, choice);
 	}
-	if (choice == "0")
+	if (choice == "0" || choice.empty())
 		return;
 
 	store.showMovieDetails(stoi(choice));
