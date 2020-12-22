@@ -76,8 +76,8 @@ void RentalStore::createMovie(string title, string director, string category)
 //
 void RentalStore::showMovies(Account* acc)
 {
-    cout << endl
-        << setw(4) << "ID" << setw(30) << "Title" << setw(25) << "Director" << setw(15) << "Category" << setw(12) << "Avaliable" << setw(20) << "Return date" << endl << endl;
+    system("cls");
+    cout << setw(4) << "ID" << setw(30) << "Title" << setw(25) << "Director" << setw(15) << "Category" << setw(12) << "Avaliable" << setw(20) << "Return date" << endl << endl;
     if (acc)
     {
         int counter = 0;
@@ -103,7 +103,13 @@ void RentalStore::showMovies(Account* acc)
 void RentalStore::showMovieDetails(int movieId)
 {
     cout << endl;
-    movies[movieId - 1]->printMovieRating();
+    if (movieId > movies.size() || movieId<1)
+        cout << "\n\t\tMovie doesn't exist\n";
+    else 
+    {
+        movies[movieId - 1]->printMovieRating();
+    }
+
     cout << endl;
 }
 

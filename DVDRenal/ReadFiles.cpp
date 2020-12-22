@@ -1,4 +1,5 @@
 #include "ReadFiles.h"
+#include <sstream>
 
 ///////////////////////////////////////////////////////////
 // Load accounts (admins and users) data from file
@@ -68,7 +69,7 @@ vector<Movie*> ReadFiles::readMovies()
 {
     ifstream moviesFile(moviesFilePath);
 
-    string title, director, category, returnDate, movieID, rentedLogin, temp, ratingSum, ratingCounter;
+    string title, director, category, returnDate, movieID, rentedLogin, temp, ratingSum, ratingCounter, line;
     vector<string> comments;
 
     if (moviesFile.is_open())
@@ -86,11 +87,11 @@ vector<Movie*> ReadFiles::readMovies()
             getline(moviesFile, returnDate, ';');
             getline(moviesFile, ratingSum, ';');
             getline(moviesFile, ratingCounter, ';');
-            while (getline(moviesFile, temp, ';'))
-            {
+            getline(moviesFile, line, '\n');
+            stringstream s(line);
+            while (getline(s, temp, ';'))
                 comments.push_back(temp);
-            }
-            getline(moviesFile, temp, '\n');
+
             comments.push_back(temp);
             if (!movieID.empty())
             {

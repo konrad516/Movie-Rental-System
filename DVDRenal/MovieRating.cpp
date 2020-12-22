@@ -23,7 +23,7 @@ void MovieRating::printRating()
     {
         cout << endl;
         for (auto com : m_comments)
-            cout << setw(100) << left << com << endl;
+            cout << setw(100) << com << endl;
     }
 }
 

@@ -114,6 +114,7 @@ void userMenu(Account* acc)
 	{
 	case '1':
 		store.showMovies();
+		ratingMenu();
 		system("pause");
 		userMenu(acc);
 		break;
@@ -144,6 +145,7 @@ void adminMenu(Account* acc)
 	{
 	case 1:
 		store.showMovies();
+		ratingMenu();
 		system("pause");
 		adminMenu(acc);
 		break;
@@ -203,6 +205,26 @@ void adminMenu(Account* acc)
 		adminMenu(acc);
 		break;
 	}
+}
+
+void ratingMenu()
+{
+	cout << endl;
+
+	string choice;
+
+	cout << "\t\tPlease enter movie ID to see details or enter 0 to back: ";
+	getline(cin, choice);
+
+	while (choice.length() > 1)
+	{
+		cout << "Please enter correct input\n";
+		getline(cin, choice);
+	}
+	if (choice == "0")
+		return;
+
+	store.showMovieDetails(stoi(choice));
 }
 
 void createMovieMenu()
