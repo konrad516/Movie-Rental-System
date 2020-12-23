@@ -130,7 +130,7 @@ void userMenu(Account* acc)
 	case '4':
 		break;
 	default:
-		cout << "Please enter correct input" << endl;
+		cout << "\nPlease enter correct input" << endl;
 		system("pause");
 		userMenu(acc);
 		break;
@@ -198,7 +198,7 @@ void adminMenu(Account* acc)
 	case 11:
 		break;
 	default:
-		cout << "Please enter correct input" << endl;
+		cout << "\n\tPlease enter correct input\n\n";
 		system("pause");
 		adminMenu(acc);
 		break;
@@ -212,12 +212,12 @@ void ratingMenu()
 	string choice;
 	string choice2;
 
-	cout << "\t\tPlease enter movie ID to see details or enter 0 to back: ";
+	cout << "\t\tPlease enter movie ID to see details or enter to go back: ";
 	getline(cin, choice);
 
 	while (choice.length() > 1)
 	{
-		cout << "\t\tPlease enter correct input\n";
+		cout << "\n\t\tPlease enter correct input: ";
 		getline(cin, choice);
 	}
 	if (choice == "0" || choice.empty())
@@ -245,6 +245,7 @@ void ratingMenu()
 		system("pause");
 		break;
 	case '3':
+		break;
 	default:
 		cout << "Please enter correct input" << endl;
 		system("pause");
