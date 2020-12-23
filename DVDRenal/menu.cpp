@@ -340,8 +340,10 @@ void reciveMenu()
 	string movie_id;
 
 	print_title(title);
+	cout << "\n\n";
+	store.showMovies();
 
-	cout << "\t\tPlease enter movie ID: ";
+	cout << "\n\n\t\tPlease enter movie ID: ";
 	getline(cin, movie_id);
 
 	store.reciveMovie(stoi(movie_id));
@@ -358,6 +360,7 @@ void rentMenu()
 	print_title(title);
 	cout << "\n\n";
 	store.showMovies();
+
 	cout << "\n\n\t\tPlease enter user login: ";
 	getline(cin, user);
 
