@@ -356,8 +356,9 @@ void rentMenu()
 	string movieID, date;
 
 	print_title(title);
-
-	cout << "\t\tPlease enter user login: ";
+	cout << "\n\n";
+	store.showMovies();
+	cout << "\n\n\t\tPlease enter user login: ";
 	getline(cin, user);
 
 	cout << "\t\tPlease enter movie ID: ";
