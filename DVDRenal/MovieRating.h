@@ -11,7 +11,7 @@ private:
 	int m_ratingSum{};
 	int m_counter{};
 public:
-//	MovieRating() {};
+	//MovieRating() {};
 	MovieRating(vector<string> comments = {}, int ratingSum = 0, int Counter = 0) :
 		m_comments(comments), m_ratingSum(ratingSum), m_counter(Counter) {};
 

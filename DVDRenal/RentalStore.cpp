@@ -100,6 +100,15 @@ void RentalStore::showMovies(Account* acc)
 
 }
 
+///////////////////////////////////////////////////////////
+// Print movie details with comments and rating
+///////////////////////////////////////////////////////////
+//
+// INPUT:
+//			movieID
+// OUTPUT:
+//          none
+//
 void RentalStore::showMovieDetails(int movieId)
 {
     system("cls");
@@ -226,6 +235,15 @@ void RentalStore::rentMovie(string user, int movie_id, string date)
     }
 }
 
+///////////////////////////////////////////////////////////
+// Add new rate to movie
+///////////////////////////////////////////////////////////
+//
+// INPUT:
+//			movieID, rate(0-10)
+// OUTPUT:
+//          none
+//
 void RentalStore::movieNewRate(int movieID, int rate)
 {
    MovieRating temp = movies[movieID - 1]->getRating();
@@ -233,6 +251,15 @@ void RentalStore::movieNewRate(int movieID, int rate)
    movies[movieID - 1]->setRating(temp);
 }
 
+///////////////////////////////////////////////////////////
+// Add new comment to movie
+///////////////////////////////////////////////////////////
+//
+// INPUT:
+//			movieID, comment
+// OUTPUT:
+//          none
+//
 void RentalStore::movieNewComment(int movieID, string comment)
 {
     MovieRating temp = movies[movieID - 1]->getRating();
@@ -240,6 +267,15 @@ void RentalStore::movieNewComment(int movieID, string comment)
     movies[movieID - 1]->setRating(temp);
 }
 
+///////////////////////////////////////////////////////////
+// Delete movie
+///////////////////////////////////////////////////////////
+//
+// INPUT:
+//			movieID
+// OUTPUT:
+//          none
+//
 void RentalStore::deleteMovie(int movie_id)
 {
     if (movie_id > movies.size() || movie_id < 1)
@@ -253,6 +289,15 @@ void RentalStore::deleteMovie(int movie_id)
     }
 }
 
+///////////////////////////////////////////////////////////
+// Delete account
+///////////////////////////////////////////////////////////
+//
+// INPUT:
+//			account id
+// OUTPUT:
+//          none
+//
 void RentalStore::deleteAccount(int acc_id)
 {
     if (acc_id > accounts.size() || acc_id < 1)

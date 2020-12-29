@@ -4,13 +4,8 @@
 
 ///////////////////////////////////////////////////////////
 // Print user choice decision panel
+// return user choice
 ///////////////////////////////////////////////////////////
-//
-// INPUT:
-//			none
-// OUTPUT:
-//			user choice
-//
 string User::printPanel()
 {
     system("cls");
@@ -37,12 +32,6 @@ string User::printPanel()
 // Print user change password panel
 // Set new password
 ///////////////////////////////////////////////////////////
-//
-// INPUT:
-//			none
-// OUTPUT:
-//			none
-//
 void User::changePassword()
 {
     system("cls");
